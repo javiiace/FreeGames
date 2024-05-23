@@ -1,0 +1,30 @@
+app-home{
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.mainHome{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  form{
+    width: 75%;
+    mat-form-field{
+      width: 100%;
+    }
+  }
+  &_claro{
+    @extend .mainHome;
+    background-color: $background_claro;
+  }
+  &_oscuro{
+    @extend .mainHome;
+    background-color: $background_oscuro;
+  }
+}

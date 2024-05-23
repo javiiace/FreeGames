@@ -1,0 +1,85 @@
+@if (!env.modoOscuro) {
+  <mat-drawer-container>
+    <mat-drawer mode="side" [(opened)]="mostrarMenu" class="menu_claro">
+      <header>
+        <h2>Selecciona una categoria</h2>
+      </header>
+      <main>
+        <div class="enlace">
+          <a routerLink="">Inicio</a>
+        </div>
+        @for (page of pages;track page) {
+          <div class="enlace">
+            <a routerLink={{page.toLowerCase()}}>{{ page }}</a>
+          </div>
+        }
+      </main>
+      <footer>
+        <mat-slide-toggle id="slideModo" (click)="toggleMode()">
+          <mat-icon>dark_mode</mat-icon>
+        </mat-slide-toggle>
+      </footer>
+
+    </mat-drawer>
+    <mat-drawer-content>
+      <nav>
+        <mat-toolbar class="navbar_claro">
+          <div class="tituloWeb">
+            <img id="logoWeb" src="assets/logo.webp">
+            <a routerLink="">Videogames F2P</a>
+          </div>
+          <div>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+                    (click)="toggleMenu()">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+
+        </mat-toolbar>
+      </nav>
+      <router-outlet/>
+    </mat-drawer-content>
+  </mat-drawer-container>
+} @else {
+  <mat-drawer-container>
+    <mat-drawer mode="side" [(opened)]="mostrarMenu" class="menu_oscuro">
+      <header>
+        <h2>Selecciona un tipo de juego</h2>
+      </header>
+      <main>
+        <div class="enlace">
+          <a routerLink="">Inicio</a>
+        </div>
+        @for (page of pages;track page) {
+          <div class="enlace">
+            <a routerLink={{page.toLowerCase()}}>{{ page }}</a>
+          </div>
+        }
+      </main>
+      <footer>
+        <mat-slide-toggle id="slideModo" (click)="toggleMode()" checked="">
+          <mat-icon>dark_mode</mat-icon>
+        </mat-slide-toggle>
+      </footer>
+
+    </mat-drawer>
+    <mat-drawer-content>
+      <nav>
+        <mat-toolbar class="navbar_oscuro">
+          <div class="tituloWeb">
+            <img id="logoWeb" src="assets/logo.webp">
+            <a routerLink="">Videogames F2P</a>
+          </div>
+          <div>
+            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon"
+                    (click)="toggleMenu()">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+
+        </mat-toolbar>
+      </nav>
+      <router-outlet/>
+    </mat-drawer-content>
+  </mat-drawer-container>
+}

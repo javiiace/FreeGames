@@ -1,0 +1,46 @@
+<main id="juego" class="container">
+  @if (cargando) {
+    <mat-spinner></mat-spinner>
+  } @else {
+    @if (errorEncontrado) {
+      <h2>Error 404 Page not Found</h2>
+
+    } @else {
+      <header>
+        <h2>{{ options.title }}</h2>
+      </header>
+      <section class="imagenJuego">
+        <header>
+          <h3>Portada del juego</h3>
+        </header>
+        <img src="{{options.thumbnail}}"/>
+      </section>
+      <main class="infoJuego container">
+        <header class="container">
+          <h3>Información sobre el juego</h3>
+        </header>
+        <section class="container">
+          <header class="container">
+            <h4>Descripción</h4>
+          </header>
+          <main>
+            <p>{{ options.description }}</p>
+          </main>
+        </section>
+        <section>
+          <header class="container">
+            <h4>Plataforma</h4>
+          </header>
+          <main class="container">
+            {{options.platform}}
+          </main>
+        </section>
+      </main>
+    }
+
+  }
+</main>
+
+<a routerLink="">
+  <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+</a>

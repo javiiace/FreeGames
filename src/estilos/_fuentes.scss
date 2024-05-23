@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Poetsen+One&display=swap');
+$fuenteBloques: "Poetsen One", sans-serif;
+
+@mixin fuenteTitulos($tamaño){
+  font-family: $fuenteBloques;
+  font-size: $tamaño;
+}
+
+h1{
+  @include fuenteTitulos(3rem);
+  color: $color_secundario_claro;
+}
+h2{
+  @include fuenteTitulos(2rem);
+  color: $color_secundario_claro;
+}
+h3{
+  @include fuenteTitulos(1.5rem);
+  color: $color_secundario_claro;
+}

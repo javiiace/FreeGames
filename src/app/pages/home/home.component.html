@@ -1,0 +1,43 @@
+@if(!env.modoOscuro){
+  <main id="mainHome" class="mainHome_claro">
+    <form>
+      <mat-form-field  >
+        <mat-label >Selecciona un juego</mat-label>
+        <input
+          type="text"
+          placeholder="Selecciona un juego"
+          aria-label="Selector para elegir un juego"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto">
+        <mat-autocomplete  #auto="matAutocomplete">
+          @for (option of filteredOptions; track option) {
+            <mat-option [value]="option.title" routerLink={{option.id}}>{{option.title}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </main>
+}@else{
+  <main id="mainHome" class="mainHome_oscuro">
+
+    <form>
+      <mat-form-field  >
+        <mat-label >Selecciona un juego</mat-label>
+        <input
+          type="text"
+          placeholder="Selecciona un juego"
+          aria-label="Selector para elegir un juego"
+          matInput
+          [formControl]="myControl"
+          [matAutocomplete]="auto">
+        <mat-autocomplete  #auto="matAutocomplete">
+          @for (option of filteredOptions; track option) {
+            <mat-option [value]="option.title" routerLink={{option.id}}>{{option.title}}</mat-option>
+          }
+        </mat-autocomplete>
+      </mat-form-field>
+    </form>
+  </main>
+
+}

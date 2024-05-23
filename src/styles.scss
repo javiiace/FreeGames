@@ -1,0 +1,21 @@
+@import "estilos/colores";
+@import "estilos/fuentes";
+@import "estilos/navbar";
+@import "estilos/home";
+@import "estilos/juegos";
+@import "estilos/container";
+@import "estilos/categorias";
+@import "estilos/tarjetas";
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
